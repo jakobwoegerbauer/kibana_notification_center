@@ -20,6 +20,13 @@ module.controller('notificationCenterNavController', ($scope, $compile, $documen
     $elem.on('click', e => e.stopPropagation());
   };
 
+  $scope.getImageName = () => {
+    if(NotificationCenter.notifications.length == 0){
+      return "plugins/notification_center/images/ic_message_white_18px.svg"
+    }
+    return "plugins/notification_center/images/ic_message_white_highlighted_18px.svg"
+  }
+
   $scope.openNotificationCenter = event => {
     event.preventDefault();
     if (!$scope.$notificationCenter) {
